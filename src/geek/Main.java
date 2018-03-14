@@ -10,11 +10,6 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
-    private FilePathBuilder builder = new FilePathBuilder();
-
-    private String linuxOSUserName = builder.buildPath("your os username");
-
     @Override
     public void start(Stage primaryStage){
         primaryStage.setTitle("DesktopMovieGeek");
@@ -28,7 +23,7 @@ public class Main extends Application {
 
         WebView view = new WebView();
         WebEngine engine = view.getEngine();
-        engine.load(linuxOSUserName);
+        engine.load("file:/// your path /index.html");
 
         root.getChildren().add(view);
         primaryStage.setScene(scene);
